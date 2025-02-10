@@ -1,0 +1,31 @@
+---
+title: blog
+---
+<!DOCTYPE html>
+<html lang="en" style="min-height: 100%;">
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+  <meta charset="utf-8">
+  <title>fxhw</title>
+  <link rel="stylesheet" href="{{ '/assets/css/stylesheet.css' | relative_url }}">
+</head>
+  {% include toggle.html %}
+  {% include navbar.html %}
+<body style="min-height: 100%;"> 
+
+  <div class="title-container">
+    <h1 class="title">
+      so, you want to know my thoughts. welcome to my <span class="emph">blog</span>.
+    </h1>
+  </div>
+
+  <ul class="dates">
+    {% for post in site.posts %}
+    <li>
+      <span id="dates">{{ post.md }}, <br> {{ post.y }}</span><a id="title-blog" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
